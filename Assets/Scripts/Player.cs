@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Vector3 prevPos = transform.position;
-        Debug.Log("Posición previa: "+prevPos);        
+        //Debug.Log("Posición previa: "+prevPos);        
         if(!isJumping){
             direction = "";
             if(Input.GetKey(KeyCode.D)){
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
                 rb.transform.position += newPosition;
             }
         }
-        Debug.Log("Posición actual: "+transform.position);
+        //Debug.Log("Posición actual: "+transform.position);
     }
 
     void OnCollisionExit2D(Collision2D other) {
