@@ -7,6 +7,7 @@ public class Camera : MonoBehaviour
     public GameObject player;
     public float sideOffset;
     public float topBotOffset;
+    public float camOffset;
     private Vector3 cameraPos;
     // Start is called before the first frame update
     void Start()
@@ -19,25 +20,25 @@ public class Camera : MonoBehaviour
     {
         cameraPos = transform.position;
         Vector3 newCameraPos;
-        if(player.transform.position.x>=cameraPos.x+7.5f){
+        if(player.transform.position.x>=cameraPos.x+sideOffset+camOffset){
            // cameraPos.x+=10f;
            newCameraPos = player.transform.position;
            cameraPos.x = newCameraPos.x+sideOffset;
             Debug.Log("Debería desplazarme hacia la derecha");
         }
-        if(player.transform.position.x<=cameraPos.x-7.5f){
+        if(player.transform.position.x<=cameraPos.x-sideOffset-camOffset){
            // cameraPos.x-=10f;
            newCameraPos = player.transform.position;
            cameraPos.x = newCameraPos.x-sideOffset;
             Debug.Log("Debería desplazarme hacia la izquierda");
         }
-        if(player.transform.position.y>=cameraPos.y+4.75f){
+        if(player.transform.position.y>=cameraPos.y+topBotOffset+camOffset){
            // cameraPos.x+=10f;
            newCameraPos = player.transform.position;
            cameraPos.y = newCameraPos.y+topBotOffset;
             Debug.Log("Debería desplazarme hacia la derecha");
         }
-        if(player.transform.position.y<=cameraPos.y-4.75f){
+        if(player.transform.position.y<=cameraPos.y-topBotOffset-camOffset){
            // cameraPos.x-=10f;
            newCameraPos = player.transform.position;
            cameraPos.y = newCameraPos.y-topBotOffset;
