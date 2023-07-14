@@ -5,7 +5,8 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public GameObject player;
-    public float offset;
+    public float sideOffset;
+    public float topBotOffset;
     private Vector3 cameraPos;
     // Start is called before the first frame update
     void Start()
@@ -21,13 +22,25 @@ public class Camera : MonoBehaviour
         if(player.transform.position.x>=cameraPos.x+7.5f){
            // cameraPos.x+=10f;
            newCameraPos = player.transform.position;
-           cameraPos.x = newCameraPos.x+offset;
+           cameraPos.x = newCameraPos.x+sideOffset;
             Debug.Log("Debería desplazarme hacia la derecha");
         }
         if(player.transform.position.x<=cameraPos.x-7.5f){
            // cameraPos.x-=10f;
            newCameraPos = player.transform.position;
-           cameraPos.x = newCameraPos.x-offset;
+           cameraPos.x = newCameraPos.x-sideOffset;
+            Debug.Log("Debería desplazarme hacia la izquierda");
+        }
+        if(player.transform.position.y>=cameraPos.y+4.75f){
+           // cameraPos.x+=10f;
+           newCameraPos = player.transform.position;
+           cameraPos.y = newCameraPos.y+topBotOffset;
+            Debug.Log("Debería desplazarme hacia la derecha");
+        }
+        if(player.transform.position.y<=cameraPos.y-4.75f){
+           // cameraPos.x-=10f;
+           newCameraPos = player.transform.position;
+           cameraPos.y = newCameraPos.y-topBotOffset;
             Debug.Log("Debería desplazarme hacia la izquierda");
         }
         //cameraPos.x = player.transform.position.x;
