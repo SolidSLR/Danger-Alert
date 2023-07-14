@@ -17,13 +17,18 @@ public class Camera : MonoBehaviour
     void Update()
     {
         cameraPos = transform.position;
-        if(player.transform.position.x>=cameraPos.x+5f){
-            cameraPos.x+=10f;
+        Vector3 newCameraPos;
+        if(player.transform.position.x>=cameraPos.x+7.5f){
+           // cameraPos.x+=10f;
+           newCameraPos = player.transform.position;
+           cameraPos.x = newCameraPos.x+offset;
             Debug.Log("Debería desplazarme hacia la derecha");
         }
-        if(player.transform.position.x<=cameraPos.x-5f){
-            cameraPos.x-=10f;
-            Debug.Log("Debería desplazarme hacia la derecha");
+        if(player.transform.position.x<=cameraPos.x-7.5f){
+           // cameraPos.x-=10f;
+           newCameraPos = player.transform.position;
+           cameraPos.x = newCameraPos.x-offset;
+            Debug.Log("Debería desplazarme hacia la izquierda");
         }
         //cameraPos.x = player.transform.position.x;
 
