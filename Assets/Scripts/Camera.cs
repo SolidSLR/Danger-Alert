@@ -24,25 +24,21 @@ public class Camera : MonoBehaviour
            // cameraPos.x+=10f;
            newCameraPos = player.transform.position;
            cameraPos.x = newCameraPos.x+sideOffset;
-            Debug.Log("Debería desplazarme hacia la derecha");
         }
         if(player.transform.position.x<=cameraPos.x-sideOffset-camOffset){
            // cameraPos.x-=10f;
            newCameraPos = player.transform.position;
            cameraPos.x = newCameraPos.x-sideOffset;
-            Debug.Log("Debería desplazarme hacia la izquierda");
         }
         if(player.transform.position.y>=cameraPos.y+topBotOffset+camOffset){
            // cameraPos.x+=10f;
            newCameraPos = player.transform.position;
            cameraPos.y = newCameraPos.y+topBotOffset;
-            Debug.Log("Debería desplazarme hacia la derecha");
         }
         if(player.transform.position.y<=cameraPos.y-topBotOffset-camOffset){
            // cameraPos.x-=10f;
            newCameraPos = player.transform.position;
            cameraPos.y = newCameraPos.y-topBotOffset;
-            Debug.Log("Debería desplazarme hacia la izquierda");
         }
         //cameraPos.x = player.transform.position.x;
 
